@@ -96,7 +96,6 @@ export default function CustomStringField(props) {
     } else {
     }
   };
-  console.log("Props", props);
   if (isMultifile) {
     let filesToBeShown = [];
     if (props.readonly) {

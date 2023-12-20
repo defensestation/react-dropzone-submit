@@ -128,7 +128,6 @@ export const SymEncryptFile = async (key, file) => {
     return blob;
 
   } catch (err) {
-    console.log('unable to read file');
     throw err;
   }
 }
@@ -150,7 +149,6 @@ export const SymDecryptFile = async (key, file) => {
     return blob;
 
   } catch (err) {
-    console.log('unable to read file');
     throw err;
   }
 }
@@ -240,7 +238,6 @@ export const SymmetricEncryption = async (key, plaintextbyteArray) => {
 
     if (!cipherbytes) {
       // TODO: return error for crypt probs
-      console.log("encryption error #1")
     }
 
     // convert to unitarry
@@ -255,7 +252,6 @@ export const SymmetricEncryption = async (key, plaintextbyteArray) => {
     return resultbytes;
 
   } catch (err) {
-    console.log('encrypt error');
     throw err;
   }
 };
@@ -323,8 +319,6 @@ export const SymmetricDecryption = async (key, plaintextbyteArray) => {
 
     return plaintextArray
   } catch (err) {
-    console.log('decryption error');
-    console.log(err);
     throw err;
   }
 };
@@ -402,7 +396,6 @@ export const AsymEncryptMessage = async (pubkey, data) => {
     return ciphertext;
 
   } catch (err) {
-    console.log('as encrypt error');
     throw err;
   }
 };
@@ -429,7 +422,6 @@ export const AsymDecryptMessage = async (privKey, ciphertext) => {
     return clearText;
 
   } catch (err) {
-    console.log('as decrypt error');
     throw err;
   }
 };
@@ -501,7 +493,6 @@ export const AsymDecryptionFile = async (privKey, file) => {
     return blob;
   }
   catch(e){
-    console.log("Decrypt file error", e);
     throw e;
 }
 }
@@ -540,7 +531,6 @@ export const ExportPostQAsymmetricKeys = async () => {
      let ciphertext = encode(encap) + '.' + encData;
      return ciphertext;
    } catch (err) {
-     console.log('error: PostQAsymEncryptMessage');
      throw err;
    }
  }
@@ -565,7 +555,6 @@ export const ExportPostQAsymmetricKeys = async () => {
      // return clear text
      return clearText;
    } catch (err) {
-     console.log('error: PostQAsymDecryptMessage');
      throw err;
    }
  }
@@ -604,7 +593,6 @@ export const ExportPostQAsymmetricKeys = async () => {
      return blob;
  
    } catch (err) {
-     console.log('error: PostQAsymEncryptFile');
      throw err;
    }
  }
@@ -641,7 +629,6 @@ export const ExportPostQAsymmetricKeys = async () => {
      return blob;
  
    } catch (err) {
-     console.log('error: PostQAsymDecryptFile');
      throw err;
    }
  }

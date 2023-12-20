@@ -118,7 +118,6 @@ function SubmitData({
       dropzone_id: dropzoneId,
       dropzone_key: dropzoneKey,
     });
-    console.log(res);
     setSession(res?.session);
     let template = String.fromCharCode(...res?.dropzone?.template?.data?.data);
     template = JSON.parse(template);
@@ -126,7 +125,6 @@ function SubmitData({
     if (res.errors) {
       const error = res.errors[0]?.message;
       const code = error.split(" ")[0];
-      console.log(code, error);
       if (code == 7) {
       }
     } else {
@@ -140,7 +138,6 @@ function SubmitData({
         cache: new InMemoryCache(),
       });
       setClient(apolloClient);
-      console.log(apolloClient);
     }
   };
   useEffect(() => {
@@ -204,7 +201,6 @@ function SubmitData({
       }
       await Promise.all(
         Object.keys(urls)?.map(async (key) => {
-          console.log(key);
           if (key != "data") {
             const enBlob = await PostQAsymEncryptFile(enc_key, files[key]);
             const file = new File([enBlob], files[key].name, {
@@ -214,7 +210,6 @@ function SubmitData({
               ...headers,
               "Content-Type": file?.type,
             };
-            console.log("Uploading files.....");
             await uploadFile(urls[key], file, headers);
           } else {
             const enBlob = await PostQAsymEncryptFile(enc_key, dataFile);

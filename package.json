@@ -1,6 +1,6 @@
 {
-  "name": "@sypher/react-dropzone-submit",
-  "version": "1.0.0",
+  "name": "@defensestation/sypher-dropzone-submit",
+  "version": "1.0.1",
   "description": "Sypher widget to submit dropzone data.",
   "main": "build/index.js",
   "module": "build/index.es.js",
@@ -14,7 +14,7 @@
     "storybook:export": "build-storybook",
     "build-storybook": "build-storybook"
   },
-  "author": "",
+  "author": "DefenseStation",
   "license": "ISC",
   "devDependencies": {
     "@apollo/client": "^3.7.10",
@@ -56,6 +56,7 @@
     "graphql": "^16.6.0",
     "html-webpack-plugin": "^5.5.0",
     "node-sass": "^8.0.0",
+    "postcss": "^8.4.32",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-date-range": "^1.4.0",
@@ -75,30 +76,45 @@
     "yup": "^0.32.11"
   },
   "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
     "@apollo/client": "^3.7.10",
     "@chakra-ui/icons": "^2.0.17",
     "@chakra-ui/react": "^2.5.1",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@rjsf/core": "^5.15.1",
+    "@rjsf/utils": "^5.15.1",
     "buffer": "^6.0.3",
+    "chakra-react-select": "^4.7.6",
     "date-fns": "^2.29.3",
     "filesize": "^10.0.6",
     "formik": "^2.2.9",
     "framer-motion": "^10.3.2",
     "graphql": "^16.6.0",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
     "react-date-range": "^1.4.0",
-    "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-icons": "^4.8.0",
     "react-multi-email": "^1.0.6",
     "sha3": "^2.1.4",
     "yup": "^0.32.11"
   },
-  "dependencies": {
-    "@rjsf/core": "^5.15.1",
-    "@rjsf/utils": "^5.15.1",
-    "chakra-react-select": "^4.7.6"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:defensestation/react-dropzone-submit.git"
+  },
+  "keywords": [
+    "sypher",
+    "sypher-dropzone",
+    "dropzone",
+    "sypher-data-submit",
+    "sypher-dropzone-submit"
+  ],
+  "bugs": {
+    "url": "https://github.com/defensestation/react-dropzone-submit/issues"
+  },
+  "homepage": "https://github.com/defensestation/react-dropzone-submit#readme"
 }

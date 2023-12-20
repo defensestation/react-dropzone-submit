@@ -14,17 +14,14 @@ class ReactMultiURL extends React.Component {
             let inputValue = '';
             const re = /[ ,;]/g;
             const isURL = validateURL || isURLFn;
-            console.log("Email value", value)
             const addEmails = (url) => {
                 const urls = this.state.urls;
-                console.log("validURLs", urls);
                 for (let i = 0, l = urls.length; i < l; i++) {
                     if (urls[i] === url) {
                         return false;
                     }
                 }
                 validURLs.push(url);
-                console.log("validURLs", validURLs);
                 return true;
             };
             if (value !== '') {
@@ -50,9 +47,7 @@ class ReactMultiURL extends React.Component {
                 else {
                     if (isEnter) {
                         const isValid = isURL(value)
-                        console.log("isURL(" + value + ")", isValid)
                         if (isValid) {
-                            console.log("Adding urls.")
                             addEmails(value);
                         }
                         else {

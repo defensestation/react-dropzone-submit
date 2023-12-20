@@ -72,7 +72,6 @@ export function uploadFile(url, file, headers = null) {
       headers: headerObj,
       body: file,
       }).catch((err) => {
-      console.log(err);
       throw err;
     });
 }
