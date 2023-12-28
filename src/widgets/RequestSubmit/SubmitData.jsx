@@ -83,6 +83,8 @@ function SubmitData({
   const [session, setSession] = useState(null);
   const [schema, setSchema] = useState(null);
   const [submitted, setSubmitted] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [error, setError] = useState("");
   const [formKey, setFormKey] = useState(new Date());
   const baseDate = new Date();
   const [range, setRange] = useState([
@@ -109,26 +111,32 @@ function SubmitData({
   const { files, client, setClient } =
     useSubmitData();
   const fetchData = async () => {
-    if (!client) return;
-    if (!dropzoneId || !dropzoneKey) {
-      throw new Error("dropzoneId and dropzoneKey are required.");
-    }
-
-    const res = await accessDropzone(client, {
-      dropzone_id: dropzoneId,
-      dropzone_key: dropzoneKey,
-    });
-    setSession(res?.session);
-    let template = String.fromCharCode(...res?.dropzone?.template?.data?.data);
-    template = JSON.parse(template);
-    setSchema(template);
-    if (res.errors) {
-      const error = res.errors[0]?.message;
-      const code = error.split(" ")[0];
-      if (code == 7) {
+    try{
+      if (!client) return;
+      if (!dropzoneId || !dropzoneKey) {
+        throw new Error("dropzoneId and dropzoneKey are required.");
       }
-    } else {
-      setData(res?.dropzone);
+  
+      const res = await accessDropzone(client, {
+        dropzone_id: dropzoneId,
+        dropzone_key: dropzoneKey,
+      });
+      setSession(res?.session);
+      let template = String.fromCharCode(...res?.dropzone?.template?.data?.data);
+      template = JSON.parse(template);
+      setSchema(template);
+      if (res.errors) {
+        const error = res.errors[0]?.message;
+        const code = error.split(" ")[0];
+        if (code == 7) {
+        }
+      } else {
+        setData(res?.dropzone);
+      }
+    }
+    catch(e) {
+      setError("Error:" + e.message)
+      setIsError(true)
     }
   };
   const init = () => {
@@ -331,7 +339,11 @@ function SubmitData({
             ) : null}
           </>
         </Stack>
-      ) : (
+      ) : (isError?
+        <Flex justifyContent={"center"} alignItems="center">
+          <Text color={"red"}>{error}</Text>
+        </Flex>
+        :
         <Flex justifyContent={"center"} alignItems="center">
           <Spinner size={"lg"} />
         </Flex>

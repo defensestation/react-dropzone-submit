@@ -1,6 +1,6 @@
 {
   "name": "@defensestation/sypher-dropzone-submit",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Sypher widget to submit dropzone data.",
   "main": "build/index.js",
   "module": "build/index.es.js",
