@@ -135,6 +135,7 @@ function SubmitData({
       }
     }
     catch(e) {
+      onError(e)
       setError("Error:" + e.message)
       setIsError(true)
     }
