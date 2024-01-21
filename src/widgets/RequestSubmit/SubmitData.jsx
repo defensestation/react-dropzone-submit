@@ -338,6 +338,9 @@ function SubmitData({
                 </Form>
               </Box>
             ) : null}
+            <Flex w="full" justify={"flex-end"} pr="4">
+              <Text color="gray.500" fontWeight={"semibold"}>Dropzone - Powered by Sypher</Text>
+            </Flex>
           </>
         </Stack>
       ) : (isError?
