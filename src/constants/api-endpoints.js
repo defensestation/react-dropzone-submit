@@ -1,1 +1,0 @@
-export const GRAPHQL_ENDPOINT = "https://graphql.dev.defencestation.ca/graphql";
