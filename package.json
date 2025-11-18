@@ -1,6 +1,6 @@
 {
   "name": "@defensestation/sypher-dropzone-submit",
-  "version": "2.0.1",
+  "version": "2.0.3",
   "description": "Sypher widget to submit dropzone data.",
   "main": "dist/sypher-widgets-beta.cjs.js",
   "module": "dist/sypher-widgets-beta.es.js",
@@ -21,7 +21,8 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@defensestation/json-form-viewer": "^0.0.4",
