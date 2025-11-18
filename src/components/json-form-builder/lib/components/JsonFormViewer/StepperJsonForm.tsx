@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
-import JsonFormViewer from ".";
+import {JsonFormViewer} from "@defensestation/json-form-viewer";
 import { Button } from "@/components/ui/button";
 import {
   Send,

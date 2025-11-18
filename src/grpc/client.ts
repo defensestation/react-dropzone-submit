@@ -19,10 +19,13 @@ const clientCredentials = new WebCredentialProvider({
 const clientCredentialsWithoutRedirection = new WebCredentialProvider({
 })
 
-export const responseClient = ResponseService.createClient(config, clientCredentials, [], options)
-export const responseClientWithoutRedirection = ResponseService.createClient(config, clientCredentialsWithoutRedirection, [], options)
-export const dropzoneClient = DropzoneService.createClient(config, clientCredentials, [], options)
-export const dropzoneClientWithoutRedirection = DropzoneService.createClient(config, clientCredentialsWithoutRedirection, [], options)
+export type ResponseClient = ReturnType<typeof ResponseService.createClient>;
+export type DropzoneClient = ReturnType<typeof DropzoneService.createClient>;
+
+export const responseClient: ResponseClient = ResponseService.createClient(config, clientCredentials, [], options)
+export const responseClientWithoutRedirection: ResponseClient = ResponseService.createClient(config, clientCredentialsWithoutRedirection, [], options)
+export const dropzoneClient: DropzoneClient = DropzoneService.createClient(config, clientCredentials, [], options)
+export const dropzoneClientWithoutRedirection: DropzoneClient = DropzoneService.createClient(config, clientCredentialsWithoutRedirection, [], options)
 
 export const changeRegion = (region: string) => {
   config.region = region

@@ -2,16 +2,20 @@ import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
 import dts from "vite-plugin-dts"
 import path from "path"
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-    plugins: [react(), dts({
-        beforeWriteFile: (filePath, content) => {
-            return {
-                filePath,
-                content: content.replace(/@\/(.*)/g, './$1') // 🔁 converts '@/lib/utils' → './lib/utils'
-            }
-        },
-    })],
+    plugins: [
+        react(),
+        tailwindcss(),
+        dts({
+            beforeWriteFile: (filePath, content) => {
+                return {
+                    filePath,
+                    content: content.replace(/@\/(.*)/g, './$1') // 🔁 converts '@/lib/utils' → './lib/utils'
+                }
+            },
+        })],
     resolve: {
         alias: {
             '@': path.resolve(__dirname, 'src'), // ✅ correct

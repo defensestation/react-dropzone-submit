@@ -135,7 +135,7 @@ export function MultiSelect({
                   >
                     {item.label}
                     <button
-                      className="ml-1 ring-offset-background rounded-full outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                      className="ml-1 ring-offset-background rounded-full outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2"
                       onMouseDown={(e) => {
                         e.preventDefault();
                         e.stopPropagation();

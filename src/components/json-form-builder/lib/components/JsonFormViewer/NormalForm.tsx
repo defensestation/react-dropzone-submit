@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Send, SquareDashed } from "lucide-react";
 
 import { useState } from 'react'
-import JsonFormViewer from ".";
+import {JsonFormViewer} from "@defensestation/json-form-viewer";
 import { JsonFormsCore, JsonSchema } from "@jsonforms/core";
 import "@/assets/css/index.css"
 import { ErrorObject } from "ajv";
@@ -74,7 +74,7 @@ export default function NormalForm({ jsonSchema, uiSchema, data, onSubmit, class
         {/* <Button variant="outline">
             Cancel
           </Button> */}
-        <Button type="button" disabled={!!errors?.length} onClick={() => onSubmit?.(formData)} className="bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white w-full">
+        <Button type="button" disabled={!!errors?.length} onClick={() => onSubmit?.(formData)} className="bg-linear-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white w-full">
           {/* <Send className="w-4 h-4 mr-2" /> */}
           {actionButtonText ? actionButtonText : "Submit Data"}
         </Button>

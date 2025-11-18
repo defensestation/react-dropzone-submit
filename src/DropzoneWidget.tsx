@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Clock, InfoIcon, Loader2 } from "lucide-react";
 import { addDays, endOfDay, startOfDay } from "date-fns";
-import SubmitDataProvider, { useSubmitData } from "@/context/SubmitData";
+// import SubmitDataProvider, { useSubmitData } from "@/context/SubmitData";
 import { getExpirationMessage, getExpirationMessageColor, getDynamicChunkSize, uploadStream } from "@/components/json-form-builder/lib/lib/functions";
 
 import NormalForm from "@/components/json-form-builder/lib/components/JsonFormViewer/NormalForm";
@@ -24,6 +24,7 @@ import { motion } from "motion/react"
 import DatePickerWithRange from "@/components/json-form-builder/lib/components/ui/date-picker-with-range";
 import { Input } from "@/components/json-form-builder/lib/components/ui/input";
 import { Button } from "@/components/json-form-builder/lib/components/ui/button";
+import { useSubmitData, FileUploadProvider } from "@defensestation/json-form-viewer"
 
 interface DropzoneWidgetProps {
     accessKey: string;
@@ -429,7 +430,7 @@ function DropzoneWidget(props: DropzoneWidgetProps) {
                         {!data?.accessSettings?.isStatsHidden && !showStats && (
                             <div className="w-full flex justify-end absolute top-4 right-4 z-10">
                                 <div className="flex items-center gap-3 text-sm text-gray-600">
-                                    {data?.accessSettings?.endDate && <div className="flex items-center gap-2 text-muted-foreground bg-gray-50 dark:bg-transparent border px-3 py-1.5 rounded-lg backdrop-blur-[16px] backdrop-saturate-[180%] bg-[rgba(17, 25, 40, 0.90)] border-[rgba(255, 255, 255, 0.125)]">
+                                    {data?.accessSettings?.endDate && <div className="flex items-center gap-2 text-muted-foreground bg-gray-50 dark:bg-transparent border px-3 py-1.5 rounded-lg backdrop-blur-lg backdrop-saturate-180 bg-[rgba(17, 25, 40, 0.90)] border-[rgba(255, 255, 255, 0.125)]">
                                         <Clock className={cn("text-primary w-4 h-4", getExpirationMessageColor(data?.accessSettings?.endDate))} />
                                         {getExpirationMessage(data?.accessSettings?.endDate)}
                                     </div>}
@@ -497,7 +498,7 @@ function DropzoneWidget(props: DropzoneWidgetProps) {
                                 <div className="w-full max-w-2xl mx-auto space-y-4 py-8">{!data?.accessSettings?.isStatsHidden && showStats && (
                                     <div className="w-full flex justify-end">
                                         <div className="flex items-center gap-3 text-sm text-gray-600">
-                                            {data?.accessSettings?.endDate && <div className="flex items-center gap-2 text-muted-foreground bg-gray-50 dark:bg-transparent border px-3 py-1.5 rounded-lg backdrop-blur-[16px] backdrop-saturate-[180%] bg-[rgba(17, 25, 40, 0.90)] border-[rgba(255, 255, 255, 0.125)]">
+                                            {data?.accessSettings?.endDate && <div className="flex items-center gap-2 text-muted-foreground bg-gray-50 dark:bg-transparent border px-3 py-1.5 rounded-lg backdrop-blur-lg backdrop-saturate-180 bg-[rgba(17, 25, 40, 0.90)] border-[rgba(255, 255, 255, 0.125)]">
                                                 <Clock className={cn("text-primary w-4 h-4", getExpirationMessageColor(data?.accessSettings?.endDate))} />
                                                 {getExpirationMessage(data?.accessSettings?.endDate)}
                                             </div>}
@@ -521,5 +522,5 @@ function DropzoneWidget(props: DropzoneWidgetProps) {
 }
 
 export default (props: DropzoneWidgetProps) => {
-    return <SubmitDataProvider><DropzoneWidget {...props} /></SubmitDataProvider>
+    return <FileUploadProvider><DropzoneWidget {...props} /></FileUploadProvider>
 }
