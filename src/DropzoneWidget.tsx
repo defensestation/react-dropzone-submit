@@ -349,7 +349,7 @@ function DropzoneWidget(props: DropzoneWidgetProps) {
             "justify-center items-center": isResponderControlVisible
         }
     )}>
-        <div className={cn("flex flex-col justify-center container max-w-lg mx-auto 2xl:grid-cols-[2.9fr_1fr] gap-4 w-full", {
+        <div className={cn("flex flex-col justify-center container mx-auto 2xl:grid-cols-[2.9fr_1fr] gap-4 w-full", {
             "w-full max-w-full": uischema?.properties?.multistep
         })}>
             {isResponderControlVisible ?
@@ -438,7 +438,7 @@ function DropzoneWidget(props: DropzoneWidgetProps) {
                             </div>
                         )}
                     </>
-                    : <div className="space-y-4 z-10 w-full max-w-2xl mx-auto">
+                    : <div className="space-y-4 z-10 w-full mx-auto">
                         {isResponderControlVisible ?
                             data?.isResponderControlsEnabled && (
                                 <Card>
@@ -495,7 +495,7 @@ function DropzoneWidget(props: DropzoneWidgetProps) {
                                 </Card>
                             )
                             : <div className="w-full z-10 max-h-app">
-                                <div className="w-full max-w-2xl mx-auto space-y-4 py-8">{!data?.accessSettings?.isStatsHidden && showStats && (
+                                <div className="w-full mx-auto space-y-4 py-8">{!data?.accessSettings?.isStatsHidden && showStats && (
                                     <div className="w-full flex justify-end">
                                         <div className="flex items-center gap-3 text-sm text-gray-600">
                                             {data?.accessSettings?.endDate && <div className="flex items-center gap-2 text-muted-foreground bg-gray-50 dark:bg-transparent border px-3 py-1.5 rounded-lg backdrop-blur-lg backdrop-saturate-180 bg-[rgba(17, 25, 40, 0.90)] border-[rgba(255, 255, 255, 0.125)]">

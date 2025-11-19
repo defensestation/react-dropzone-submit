@@ -7,8 +7,11 @@ function App() {
 
   return (
     <div className='w-full h-screen flex justify-center items-center'>
-      <div className='w-[600px] h-96'>
-        <DropzoneWidget accessKey="opcvSIZXPR51pO_LxjvZo" isPassword={false} />
+      <div className='w-[800px] h-96'>
+        <DropzoneWidget 
+        accessKey="opcvSIZXPR51pO_LxjvZo" 
+        isPassword={false} 
+        />
       </div>
     </div>
   )

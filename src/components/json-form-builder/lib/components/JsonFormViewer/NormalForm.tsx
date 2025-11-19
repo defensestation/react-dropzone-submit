@@ -35,7 +35,7 @@ export default function NormalForm({ jsonSchema, uiSchema, data, onSubmit, class
 
   return (
     // <div className={cn("bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center", className)}>
-    <Card id="normal-preview" className={cn("w-full shadow-lg bg-card", className)} style={{
+    <div id="normal-preview" className={cn("w-full", className)} style={{
       backgroundColor: properties?.color?  properties.color : ""
     }}>
       <CardHeader className="space-y-2">
@@ -79,7 +79,7 @@ export default function NormalForm({ jsonSchema, uiSchema, data, onSubmit, class
           {actionButtonText ? actionButtonText : "Submit Data"}
         </Button>
       </CardFooter>}
-    </Card>
+    </div>
     // </div>
 
   )
