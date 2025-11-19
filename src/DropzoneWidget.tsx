@@ -345,7 +345,6 @@ function DropzoneWidget(props: DropzoneWidgetProps) {
 
     return (<div className={cn("flex justify-center items-center w-full h-full",
         {
-            "pt-12 pb-12": !uischema?.properties?.multistep,
             "justify-center items-center": isResponderControlVisible
         }
     )}>
@@ -495,7 +494,7 @@ function DropzoneWidget(props: DropzoneWidgetProps) {
                                 </Card>
                             )
                             : <div className="w-full z-10 max-h-app">
-                                <div className="w-full mx-auto space-y-4 py-8">{!data?.accessSettings?.isStatsHidden && showStats && (
+                                <div className="w-full mx-auto space-y-4">{!data?.accessSettings?.isStatsHidden && showStats && (
                                     <div className="w-full flex justify-end">
                                         <div className="flex items-center gap-3 text-sm text-gray-600">
                                             {data?.accessSettings?.endDate && <div className="flex items-center gap-2 text-muted-foreground bg-gray-50 dark:bg-transparent border px-3 py-1.5 rounded-lg backdrop-blur-lg backdrop-saturate-180 bg-[rgba(17, 25, 40, 0.90)] border-[rgba(255, 255, 255, 0.125)]">
