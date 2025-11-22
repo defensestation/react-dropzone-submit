@@ -9,12 +9,10 @@ export default defineConfig({
         react(),
         tailwindcss(),
         dts({
-            beforeWriteFile: (filePath, content) => {
-                return {
-                    filePath,
-                    content: content.replace(/@\/(.*)/g, './$1') // 🔁 converts '@/lib/utils' → './lib/utils'
-                }
-            },
+            include: ['src'],
+            insertTypesEntry: true,
+            tsconfigPath: './tsconfig.app.json',
+            afterDiagnostic: () => { },
         })],
     resolve: {
         alias: {
@@ -27,9 +25,9 @@ export default defineConfig({
     build: {
         lib: {
             entry: "src/index.ts",
-            name: "SypherWidgets",
+            name: "SypherDropzoneSubmit",
             fileName: (format) => `sypher-widgets-beta.${format}.js`,
-            formats: ["es", "cjs"],
+            formats: ["es", "umd"],
         },
         rollupOptions: {
             external: ["react", "react-dom"],

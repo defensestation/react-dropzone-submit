@@ -5,11 +5,9 @@ import { addDays, endOfDay, startOfDay } from "date-fns";
 import { getExpirationMessage, getExpirationMessageColor, getDynamicChunkSize, uploadStream } from "@/components/json-form-builder/lib/lib/functions";
 
 import NormalForm from "@/components/json-form-builder/lib/components/JsonFormViewer/NormalForm";
-import { dropzoneClientWithoutRedirection, responseClientWithoutRedirection } from "@/grpc/client";
 import { byteArrayToJSON, splitJsonFormsSchemas } from "@/components/json-form-builder/lib/utils/util-function";
-import { JsonSchema } from "@jsonforms/core";
-import { DateRange } from "react-day-picker";
-import { CustomJsonSchema } from "@/components/json-form-builder/lib/context/dnd-context";
+import type { DateRange } from "react-day-picker";
+import type { CustomJsonSchema } from "@/components/json-form-builder/lib/context/dnd-context";
 import DataSubmitted from "@/components/DataSubmitted";
 import { CommonTypes, ResponseTypes } from "@ds-sdk/sypher";
 import { cn } from "@/lib/utils";
@@ -25,22 +23,30 @@ import DatePickerWithRange from "@/components/json-form-builder/lib/components/u
 import { Input } from "@/components/json-form-builder/lib/components/ui/input";
 import { Button } from "@/components/json-form-builder/lib/components/ui/button";
 import { useSubmitData, FileUploadProvider } from "@defensestation/json-form-viewer"
+import { useDsClients } from "./hooks/user-ds-client";
 
 interface DropzoneWidgetProps {
     accessKey: string;
     isPassword?: boolean;
     showStats?: boolean;
+    submitButtonText?: string;
     onSuccess?: () => void;
     onError?: (error: unknown) => void;
+    region?: string;
+    domain?: string;
 }
 
 function DropzoneWidget(props: DropzoneWidgetProps) {
-    const { accessKey, isPassword, onError, onSuccess, showStats } = props;
+    const {
+    dropzoneClientWithoutRedirection,
+    responseClientWithoutRedirection,
+} = useDsClients(props.region, props.domain);
+    const { accessKey, isPassword, onError, onSuccess, showStats, submitButtonText } = props;
     const [loginRequired, setLoginRequired] = useState(false);
     const [linkBroken, setLinkBroke] = useState(false);
     const [data, setData] = useState<CommonTypes.DropzoneAccess>();
     const [session, setSession] = useState<string>();
-    const [schema, setSchema] = useState<JsonSchema>();
+    const [schema, setSchema] = useState<CustomJsonSchema>();
     const [isResponderControlVisible, setIsResponderControlVisible] = useState<boolean>(false);
     const [uischema, setUISchema] = useState<CustomJsonSchema>();
     const [submitted, setSubmitted] = useState(false);
@@ -510,7 +516,7 @@ function DropzoneWidget(props: DropzoneWidgetProps) {
                                             uiSchema={uischema}
                                             properties={uischema?.properties}
                                             onSubmit={onSubmit}
-                                            actionButtonText={data?.isResponderControlsEnabled ? "Next" : "Submit"}
+                                            actionButtonText={data?.isResponderControlsEnabled ? "Next" : submitButtonText || "Submit"}
                                         />
                                     )}
                                 </div>

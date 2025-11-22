@@ -2,20 +2,9 @@
   "name": "@defensestation/sypher-dropzone-submit",
   "version": "2.0.6",
   "description": "Sypher widget to submit dropzone data.",
-  "main": "dist/sypher-widgets-beta.cjs.js",
-  "module": "dist/sypher-widgets-beta.es.js",
-  "types": "dist/types/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/sypher-widgets-beta.es.js",
-      "require": "./dist/sypher-widgets-beta.cjs.js",
-      "types": "./dist/types/index.d.ts"
-    },
-    "./style.css": {
-      "default": "./dist/style.css"
-    }
-  },
-  "style": "dist/style.css",
+  "main": "./dist/sypher-widgets-beta.umd.js",
+  "module": "./dist/sypher-widgets-beta.es.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -89,6 +78,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.17",
+    "@types/lodash": "^4.17.20",
     "@types/node": "^24.0.3",
     "@types/react": "^19.2.6",
     "@types/react-dom": "^19.2.3",
