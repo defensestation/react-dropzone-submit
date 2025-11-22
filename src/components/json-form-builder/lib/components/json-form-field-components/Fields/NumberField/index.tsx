@@ -1,9 +1,9 @@
-import { FormControl, FormItem, FormMessage } from "@/components/ui/form"
+import { FormControl, FormItem } from "@/components/ui/form"
 import BaseComponent from "../BaseComponent"
 import { useJSONBuilderContext } from "@/components/json-form-builder/lib/context/dnd-context";
 import { useEffect, useRef } from "react";
 import useContenteditable from "@/components/json-form-builder/lib/hooks/use-conteneditable";
-import { FieldProps } from "@/components/json-form-builder/lib/types/dnd-types";
+import type { FieldProps } from "@/components/json-form-builder/lib/types/dnd-types";
 import { cn } from "@/lib/utils";
 
 export default function DateField(props: FieldProps) {

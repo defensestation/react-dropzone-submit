@@ -1,4 +1,4 @@
-import { CustomJsonSchema } from "@/components/json-form-builder/lib/context/dnd-context";
+import type { CustomJsonSchema } from "@/components/json-form-builder/lib/context/dnd-context";
 import { decryptFile, encryptFile, readStreamInFixedChunks } from "@ds-sdk/crypto";
 import { CommonTypes } from "@ds-sdk/sypher";
 import { format } from "date-fns";

@@ -13,10 +13,12 @@ import {
 } from "@/components/ui/select";
 
 import ConditionSchemaBuilder from "./ConditionSchemaBuilder"; // Ensure correct import path
-import { JsonSchema } from "@jsonforms/core";
+import type { JsonSchema } from "@jsonforms/core";
 import { Label } from "@/components/ui/label";
-import { Condition, Rule } from "../types"; // Import the Condition and Rule types
-import { CustomRuleEffect, Item } from "../../../types/dnd-types";
+import type { Condition, Rule } from "../types"; // Import the Condition and Rule types
+ // Import the Condition and Rule types
+// Import the Condition and Rule types
+import type { CustomRuleEffect, Item } from "../../../types/dnd-types";
 import { Terminal } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 

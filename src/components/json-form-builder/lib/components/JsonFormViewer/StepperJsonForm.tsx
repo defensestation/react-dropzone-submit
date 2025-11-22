@@ -7,7 +7,7 @@ import {
   ChevronLeft,
 } from "lucide-react";
 import { evaluateRule } from "../../utils/evaluateRule";
-import { CustomRule } from "../../types/dnd-types";
+import { type CustomRule } from "../../types/dnd-types";
 import { motion, AnimatePresence } from "framer-motion";
 import "@/assets/css/index.css";
 import { Separator } from "../ui/separator";

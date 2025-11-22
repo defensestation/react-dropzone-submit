@@ -1,6 +1,6 @@
 import { useDroppable } from "@dnd-kit/core";
 import React from "react";
-import { DroppableItemProps } from "../../../types/dnd-types";
+import type { DroppableItemProps } from "../../../types/dnd-types";
 
 interface Props extends DroppableItemProps {}
 

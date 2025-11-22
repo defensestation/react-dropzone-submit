@@ -1,13 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { JsonSchema, UISchemaElement } from "@jsonforms/core";
-import { CustomJsonSchema } from "../../context/dnd-context";
-import { CustomRule, Item } from "../../types/dnd-types";
+import type { UISchemaElement } from "@jsonforms/core";
+import type { CustomJsonSchema } from "../../context/dnd-context";
+import type { CustomRule, Item } from "../../types/dnd-types";
 import RuleBuilder from "./components/Rule";
 import ConfigDisplay from "../FieldProperties/ConditionViewer";
 import { Label } from "@/components/ui/label";
-import ConfirmationDialog from "@/components/ConfirmationDialog";
 
 type QueryBuilder = {
   onChange?: (rules: CustomRule) => void;
@@ -121,16 +120,6 @@ export default function QueryBuilder({
         </DialogContent>
       </Dialog>
       
-      <ConfirmationDialog 
-        title="Delete Condition" 
-        description="Are you sure? you want to delete the condition." 
-        open={isDeleteDialogOpen} 
-        onOpenChange={setIsDeleteDialogOpen} 
-        onConfirm={() => {
-          setIsDeleteDialogOpen(false)
-          initialValue ? onRemoveCondition?.(initialValue) : null
-        }} 
-      />
     </div>
   );
 }

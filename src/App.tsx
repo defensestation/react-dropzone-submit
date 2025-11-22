@@ -11,6 +11,9 @@ function App() {
         <DropzoneWidget 
         accessKey="opcvSIZXPR51pO_LxjvZo" 
         isPassword={false} 
+        region='us'
+        domain='dev.defencestation.ca'
+        submitButtonText='Call me'
         />
       </div>
     </div>

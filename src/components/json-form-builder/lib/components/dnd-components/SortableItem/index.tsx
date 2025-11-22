@@ -1,7 +1,7 @@
 import { defaultAnimateLayoutChanges, useSortable } from '@dnd-kit/sortable';
 import { CSS } from "@dnd-kit/utilities";
 import React from 'react'
-import { DroppableItemProps } from '../../../types/dnd-types';
+import type { DroppableItemProps } from '../../../types/dnd-types';
 import { GripVertical } from 'lucide-react';
 
 

@@ -1,7 +1,7 @@
-import { UniqueIdentifier } from "@dnd-kit/core";
-import { UseSortableArguments } from "@dnd-kit/sortable";
-import { JsonSchema } from "@jsonforms/core";
-import { LucideIcon } from "lucide-react";
+import type { UniqueIdentifier } from "@dnd-kit/core";
+import type { UseSortableArguments } from "@dnd-kit/sortable";
+import type { JsonSchema } from "@jsonforms/core";
+import type { LucideIcon } from "lucide-react";
 
 export type DroppableItemProps = {
   children: React.ReactElement;

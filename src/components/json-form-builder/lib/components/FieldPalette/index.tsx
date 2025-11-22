@@ -1,12 +1,12 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, type ChangeEvent } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { CardTitle } from "@/components/ui/card";
-import { FieldItemType } from "../../types/common-types";
-import DraggableItem, { DraggableProps } from "../dnd-components/DraggableItem";
+import { type FieldItemType } from "../../types/common-types";
+import DraggableItem, { type DraggableProps } from "../dnd-components/DraggableItem";
 import { useJSONBuilderContext } from "../../context/dnd-context";
 import { cn } from "@/lib/utils";
 import {
-  CategoryData,
+  type CategoryData,
   CHOICE_FIELDS,
   CONTACT_INFO_FIELDS,
   LAYOUT_FIELDS,
@@ -15,7 +15,7 @@ import {
 } from "../../constants/fields";
 import { GripVertical, LayoutGrid, Search, X } from "lucide-react";
 import { FloatingLabelInput } from "@/components/ui/floating-input";
-import { Item } from "../../types/dnd-types";
+import { type Item } from "../../types/dnd-types";
 
 type CustomFieldPaletteItem = {
   addItem: (item: Item) => void;

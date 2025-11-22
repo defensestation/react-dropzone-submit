@@ -1,6 +1,6 @@
 import { JsonForms } from '@jsonforms/react';
 import { vanillaCells, vanillaRenderers } from '@jsonforms/vanilla-renderers';
-import { JsonFormsCore, JsonSchema, UISchemaElement } from '@jsonforms/core';
+import type { JsonFormsCore, JsonSchema, UISchemaElement } from '@jsonforms/core';
 import { JsonFormsStyleContext, vanillaStyles } from '@jsonforms/vanilla-renderers';
 import TextCell, { textCellTester } from '../cells/TextCell';
 import { InputControl, inputControlTester, EnumControl, enumControlTester } from "../controls"

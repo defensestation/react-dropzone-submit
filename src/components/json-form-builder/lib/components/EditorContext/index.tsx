@@ -1,24 +1,23 @@
 import {
   DndContext,
-  DragEndEvent,
-  DragMoveEvent,
-  DragStartEvent,
+  type DragEndEvent,
+  type DragMoveEvent,
+  type DragStartEvent,
   KeyboardSensor,
   DragOverlay,
-  UniqueIdentifier,
+  type UniqueIdentifier,
   useSensor,
   useSensors,
-  Active,
+  type Active,
   pointerWithin,
 } from "@dnd-kit/core";
 import { useEffect, useRef, useState, useCallback } from "react";
-import { CustomJsonSchema, CustomLayoutType, useJSONBuilderContext } from "../../context/dnd-context";
+import { type CustomJsonSchema, type CustomLayoutType, useJSONBuilderContext } from "../../context/dnd-context";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
-import { snapCenterToCursor } from "@dnd-kit/modifiers";
-import { Item } from "../../types/dnd-types";
+import { type Item } from "../../types/dnd-types";
 import JsonBuilderContext from "../JsonBuilderContextWrapper";
 import { convertSchemas } from "../../utils/util-function";
-import { JsonSchema, UISchemaElement } from "@jsonforms/core";
+import { type JsonSchema, type UISchemaElement } from "@jsonforms/core";
 import isEqual from "lodash/isEqual"; 
 
 interface OverlayComponentType {
@@ -346,7 +345,6 @@ function Component({
       onDragOver={handleDragOver}
       onDragEnd={handleDragEnd}
       onDragCancel={onDragCancel}
-      modifiers={[snapCenterToCursor]}
     >
       {children}
       <DragOverlay

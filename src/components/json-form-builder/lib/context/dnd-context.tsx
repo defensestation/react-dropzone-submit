@@ -1,10 +1,10 @@
-import { Active, Over, UniqueIdentifier } from "@dnd-kit/core";
+import type { Active, Over, UniqueIdentifier } from "@dnd-kit/core";
 import { createContext, useContext, useEffect, useState } from "react";
 import React from "react";
-import { Item } from "../types/dnd-types";
-import { JsonSchema, Layout, Rule, UISchemaElement } from "@jsonforms/core";
+import type { Item } from "../types/dnd-types";
+import type { JsonSchema, Layout, Rule, UISchemaElement } from "@jsonforms/core";
 import { v4 as uuidv4 } from "uuid";
-import { JsonSchema7 } from "@jsonforms/core";
+import type { JsonSchema7 } from "@jsonforms/core";
 import debounce from 'lodash/debounce';
 
 export type FormProperties = {

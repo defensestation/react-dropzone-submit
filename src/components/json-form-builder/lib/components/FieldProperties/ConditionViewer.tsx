@@ -18,8 +18,8 @@ import {
   Target,
   Zap
 } from 'lucide-react';
-import { CustomRule, CustomRuleEffect } from '../../types/dnd-types';
-import { JsonSchema } from '@jsonforms/core';
+import type { CustomRule, CustomRuleEffect } from '../../types/dnd-types';
+import type { JsonSchema } from '@jsonforms/core';
 
 interface ConfigDisplayProps {
   rule?: CustomRule;

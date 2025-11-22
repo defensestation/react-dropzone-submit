@@ -1,13 +1,14 @@
 // utils/parseConditionSchema.ts
 
-import { JsonSchema4 } from '../../types/dnd-types';
+import type { JsonSchema } from "@jsonforms/core";
+
 
 interface ParsedCondition {
   operator: string;
   value: any;
 }
 
-export const parseConditionSchema = (schema: JsonSchema4): ParsedCondition | null => {
+export const parseConditionSchema = (schema: JsonSchema): ParsedCondition | null => {
   if (!schema) return null;
 
   // isEqual

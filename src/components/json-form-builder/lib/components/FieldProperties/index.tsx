@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useJSONBuilderContext } from "../../context/dnd-context";
-import { CustomRule, Item } from "../../types/dnd-types";
+import type { CustomRule, Item } from "../../types/dnd-types";
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Control, useFieldArray, useForm } from "react-hook-form"
+import { type Control, useFieldArray, useForm } from "react-hook-form"
 import { z } from "zod"
 import { Button } from "@/components/ui/button"
 import {
@@ -19,7 +19,7 @@ import { Separator } from "../ui/separator";
 import { Trash2 } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import QueryBuilder from "../query-builder";
-import { FIELD_KEYS, FIELD_MAP } from "../../constants/fields";
+import { type FIELD_KEYS, FIELD_MAP } from "../../constants/fields";
 import {
   Accordion,
   AccordionContent,

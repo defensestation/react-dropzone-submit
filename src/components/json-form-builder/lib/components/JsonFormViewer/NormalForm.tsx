@@ -4,11 +4,11 @@ import { Send, SquareDashed } from "lucide-react";
 
 import { useState } from 'react'
 import {JsonFormViewer} from "@defensestation/json-form-viewer";
-import { JsonFormsCore, JsonSchema } from "@jsonforms/core";
+import type { JsonFormsCore, JsonSchema } from "@jsonforms/core";
 import "@/assets/css/index.css"
-import { ErrorObject } from "ajv";
+import type { ErrorObject } from "ajv";
 import { cn } from "@/lib/utils";
-import { CustomJsonSchema, CustomLayoutType, FormProperties } from "../../context/dnd-context";
+import type { CustomJsonSchema, CustomLayoutType, FormProperties } from "../../context/dnd-context";
 type NormalLayoutProps = {
   jsonSchema: CustomJsonSchema | object;
   uiSchema: CustomLayoutType;

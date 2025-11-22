@@ -1,12 +1,12 @@
-import { Item, LayoutType } from "../types/dnd-types";
+import { type Item, LayoutType } from "../types/dnd-types";
 import { v4 as uuidv4 } from "uuid";
-import { JsonSchema, UISchemaElement } from "@jsonforms/core";
-import { RuleGroupType, RuleType } from "react-querybuilder";
+import type { JsonSchema, UISchemaElement } from "@jsonforms/core";
+import type { RuleGroupType, RuleType } from "react-querybuilder";
 import { PaletteIconMap } from "../constants/fields";
 import { Columns, Group, Rows } from "lucide-react";
 import { getCategoryColorByDsType } from "./fields-utils";
 import { CommonTypes } from "@ds-sdk/sypher";
-import { CustomJsonSchema, CustomLayoutType } from "../context/dnd-context";
+import type { CustomJsonSchema, CustomLayoutType } from "../context/dnd-context";
 
 // Function to convert schemas
 export function convertSchemas(jsonSchema: CustomJsonSchema, uiSchema: CustomLayoutType): Item[] {

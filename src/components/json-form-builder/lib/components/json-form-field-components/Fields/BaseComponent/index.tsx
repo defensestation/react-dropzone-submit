@@ -1,6 +1,6 @@
-import React, { ReactNode } from "react";
+import React, { type ReactNode } from "react";
 import {  TbEye, TbEyeOff, TbInputCheck, TbInputX } from "react-icons/tb";
-import { FieldProps } from "../../../../types/dnd-types";
+import { type FieldProps } from "../../../../types/dnd-types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Split, Trash } from "lucide-react";

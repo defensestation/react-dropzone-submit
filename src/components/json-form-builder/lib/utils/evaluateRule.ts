@@ -1,6 +1,6 @@
 // utils/evaluateRule.ts
-import Ajv, { ValidateFunction } from 'ajv';
-import { CustomRule } from '../types/dnd-types';
+import Ajv, { type ValidateFunction } from 'ajv';
+import { type CustomRule } from '../types/dnd-types';
 
 const ajv = new Ajv();
 const validateCache: Record<string, ValidateFunction> = {};
